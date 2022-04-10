@@ -1,9 +1,5 @@
-# This is a copy of 09_History_GUI_v5 which is combined with the converter
-# function from 09_History_GUI_v1. The Converter class (lines 13-147)
-# - Not the history function on lines 149-150 - has been copied from
-# 09_History_GUI_v1 (lines 15-149). Then, on line 133, need to change
-# "if has_errors != "yes"".
-# Removed the print statement from line 135 and make the history button NORMAL
+# Changed the >= 7 to > 7 at line 194
+#
 
 from tkinter import *
 from functools import partial  # To prevent unwanted windows
@@ -161,7 +157,7 @@ class History:
 
         # Set up history heading (row 0)
         self.how_heading = Label(self.history_frame, text="Calculation History",
-                                 font=("Arial", "19", "Bold"), bg=background)
+                                 font=("arial 19 bold"), bg=background)
         self.how_heading.grid(row=0)
 
         # history text (label, row 1)
@@ -179,7 +175,7 @@ class History:
 
         # History Output goes here... (row 2)
         history_string = ""
-        if len(calc_history) >= 7:
+        if len(calc_history) > 7:
             for item in range(0, 7):
                 history_string += calc_history[len(calc_history)-item-1]+"\n"
 
